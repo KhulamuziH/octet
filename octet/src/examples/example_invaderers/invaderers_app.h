@@ -169,6 +169,8 @@ namespace octet {
       first_border_sprite,
       last_border_sprite = first_border_sprite + num_borders - 1,
 
+	  player_two_ship_sprite,
+
       num_sprites,
 
     };
@@ -429,6 +431,9 @@ namespace octet {
 
       GLuint GameOver = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/GameOver.gif");
       sprites[game_over_sprite].init(GameOver, 20, 0, 3, 1.5f);
+
+	  GLuint p2ship = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/ship.gif");
+	  sprites[player_two_ship_sprite].init(p2ship, 0.7f, 0.7f, 0.25f, 0.25f);
 
       GLuint invaderer = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/invaderer.gif");
       for (int j = 0; j != num_rows; ++j) {
