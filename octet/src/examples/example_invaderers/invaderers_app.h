@@ -241,29 +241,16 @@ namespace octet {
     // use the keyboard to move the ship
     void move_ship() {
       const float ship_speed = 0.05f;
-
-	   sprite &ship = sprites[ship_sprite];
-	   sprite &ship2 = sprites[player_two_ship_sprite];
-
       // left and right arrows
       if (is_key_down(key_left)) {
-        ship.translate(-ship_speed, 0);
-		ship2.translate(-ship_speed,0);
-        if (ship.collides_with(sprites[first_border_sprite+2])) {
-          ship.translate(+ship_speed, 0);
+        sprites[ship_sprite].translate(-ship_speed, 0);
+        if (sprites[ship_sprite].collides_with(sprites[first_border_sprite+2])) {
+          sprites[ship_sprite].translate(+ship_speed, 0);
         }
-		if (ship2.collides_with(sprites[first_border_sprite+2])) {
-			ship2.translate(+ship_speed, 0);
-		}
-      } 
-	  else if (is_key_down(key_right)) {
-	    ship.translate(-ship_speed, 0);
-	    ship2.translate(-ship_speed,0);
-	    if (ship.collides_with(sprites[first_border_sprite+2])) {
-	      ship.translate(+ship_speed, -0);
-	  }
-		if (ship2.collides_with(sprites[first_border_sprite + 2])) {
-			ship2.translate(+ship_speed, 0);
+      } else if (is_key_down(key_right)) {
+        sprites[ship_sprite].translate(+ship_speed, 0);
+        if (sprites[ship_sprite].collides_with(sprites[first_border_sprite+3])) {
+          sprites[ship_sprite].translate(-ship_speed, 0);
         }
       }
     }
