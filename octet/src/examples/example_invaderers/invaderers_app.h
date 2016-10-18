@@ -247,10 +247,10 @@ namespace octet {
 
       // left and right arrows ship
       if (is_key_down(key_left)) {
-        ship.translate(-ship_speed,0);
-		ship2.translate(-ship_speed,0);
+        ship.translate(ship_speed,0);
+		ship2.translate(ship_speed,0);
         if (ship.collides_with(sprites[first_border_sprite+2])) {
-          ship.translate(+ship_speed, 0);
+          ship.translate(-ship_speed, 0);
         }
 		if (ship2.collides_with(sprites[first_border_sprite+2])) {
 			ship2.translate(+ship_speed, 0);
