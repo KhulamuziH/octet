@@ -241,16 +241,30 @@ namespace octet {
     // use the keyboard to move the ship
     void move_ship() {
       const float ship_speed = 0.05f;
-      // left and right arrows
+
+	   sprite &ship = sprites[ship_sprite];
+	   sprite &ship2 = sprites[player_two_ship_sprite];
+
+      // left and right arrows ship
       if (is_key_down(key_left)) {
-        sprites[ship_sprite].translate(-ship_speed, 0);
-        if (sprites[ship_sprite].collides_with(sprites[first_border_sprite+2])) {
-          sprites[ship_sprite].translate(+ship_speed, 0);
+        ship.translate(-ship_speed,0);
+		ship2.translate(-ship_speed,0);
+        if (ship.collides_with(sprites[first_border_sprite+2])) {
+          ship.translate(+ship_speed, 0);
         }
-      } else if (is_key_down(key_right)) {
-        sprites[ship_sprite].translate(+ship_speed, 0);
-        if (sprites[ship_sprite].collides_with(sprites[first_border_sprite+3])) {
-          sprites[ship_sprite].translate(-ship_speed, 0);
+		if (ship2.collides_with(sprites[first_border_sprite+2])) {
+			ship2.translate(+ship_speed, 0);
+		}
+      } 
+	  // left and right arrows ship2
+	  else if (is_key_down(key_right)) {
+	    ship.translate(-ship_speed, 0);
+	    ship2.translate(-ship_speed,0);
+	    if (ship.collides_with(sprites[first_border_sprite+2])) {
+	      ship.translate(+ship_speed, -0);
+	  }
+		if (ship2.collides_with(sprites[first_border_sprite + 2])) {
+			ship2.translate(+ship_speed, 0);
         }
       }
     }
@@ -433,7 +447,7 @@ namespace octet {
       sprites[game_over_sprite].init(GameOver, 20, 0, 3, 1.5f);
 
 	  GLuint p2ship = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/ship.gif");
-	  sprites[player_two_ship_sprite].init(p2ship, 0.7f, 0.7f, 0.25f, 0.25f);
+	  sprites[player_two_ship_sprite].init(p2ship, 0.8, -2.75f, 0.25f, 0.25f);
 
       GLuint invaderer = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/invaderer.gif");
       for (int j = 0; j != num_rows; ++j) {
