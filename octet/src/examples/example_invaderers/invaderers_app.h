@@ -491,7 +491,7 @@ namespace octet {
       }
 
       // sounds
-      whoosh = resource_dict::get_sound_handle(AL_FORMAT_MONO16, "assets/invaderers/whoosh.wav");
+      whoosh = resource_dict::get_sound_handle(AL_FORMAT_MONO16, "assets/invaderers/projectile_launch.wav");
       bang = resource_dict::get_sound_handle(AL_FORMAT_MONO16, "assets/invaderers/bang.wav");
       cur_source = 0;
       alGenSources(num_sound_sources, sources);
