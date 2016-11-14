@@ -1,25 +1,39 @@
-# octet
+Khulamuzi Hlabangana
+Introduction to programming
+Invaders Project
 
-Octet is a framework for teaching OpenGL and the rudiments of game programming such
-as Geometry construction, Shaders, Matrices, Rigid body Physics and Fluid dynamics.
+Brief
 
-It has a number of examples in the src/examples directory.
+For the invaders game l changed quite a few things with the intention of making the 
+game harder for the player, by having the player use two ships at the same time sharing
+one health bar. I hoped to make the game rely on mouse control for shooting so the ship 
+would rotate to the pointed direction to shoot and bounce projectiles off the walls. Since
+l have no knowledge in programming so the game remains a dream.
 
-To use with visual studio, fork this repository into your own account and then
-"Clone Into Desktop" using the GitHub tool and open one of the .sln files in src/examples.
+Game Description
 
-There is a python script for generating your own projects from a template.
+Video: https://www.youtube.com/watch?v=VmqqvoirNRA
+The game is a 2d shooter where you fend off alien invaders using your weapons however be wary 
+captain the enemy will not stand idly by so keep on your toes and avoid their projectiles.
 
-From the octet directory run:
+Game Mechanics
 
-packaging\make_example.py my_example
+There is not much change in the game mechanics compared to the original copy of the invaders 
+game, the only difference is that you can destroy the enemies faster than intended and at this 
+point it’s far too late to tinker with the code so l hand it in as it is. The gameplay has some 
+bugs if for example the ships touch either left of right border continuously it causes the ship 
+to overlap on top of each other as they pushed towards each other.
 
-To create your own project in src/examples
+Control 
 
-Examples should also work with Xcode, although testing is a lot less thorough. If it does not work, send
-me a pull request with fixes, please...
+The game uses the standard arrow keys and the space bar key to shot the missiles.
+UI
+The game is coloured in cyan blue to sell a science fiction narrative, a very popular hue for 
+eccentric design as well as comfortable to the eye and not mundane.
 
-Octet is a bit unusual in that it does not use external libraries such as libjpeg or zlib.
-These are implemented in source form in the framework so that you can understand the code.
-The source of most academic libraries is almost unreadble, so we aim to help your understanding
-of coding codecs such as GIF, JPEG, ZIP and so on.
+Modifications
+
+To modify the game l had help from Matthew Duddington and Hung-Li Chou at adding a new ship 
+sprite, understanding some of the syntax and purposes of functions such as the array, classes, 
+functions and especially the reason of declaring code. Lastly l replaced “whoosh” sound with a 
+gushing air sound which reminded me of cargo being jettisoned in space games.
